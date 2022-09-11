@@ -1,0 +1,31 @@
+{
+  "name": "woocommerce",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "svg": "svgr -d src/components/icons src/icons/svgs",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@svgr/cli": "^6.3.1",
+    "@woocommerce/woocommerce-rest-api": "^1.0.1",
+    "axios": "^0.27.2",
+    "lodash": "^4.17.21",
+    "next": "12.2.5",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "sass": "^1.54.8"
+  },
+  "devDependencies": {
+    "eslint": "8.23.0",
+    "eslint-config-next": "12.2.5",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-import": "^15.0.0",
+    "postcss-preset-env": "^7.8.0",
+    "precss": "^4.0.0",
+    "tailwindcss": "^3.1.8"
+  }
+}
