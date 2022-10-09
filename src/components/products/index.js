@@ -1,8 +1,16 @@
-function Products() {
+import { isArray, isEmpty } from "lodash";
+import Product from "./product";
+
+function Products({ products }) {
+  if (isEmpty(products) || !isArray(products)) {
+    return null;
+  }
   return (
     <>
-      <div className="flex flex-wrap -mx-px overflow-hidden">
-        <div className="my-px px-px w-1/3 overflow-hidden sm:w-1/2">1</div>
+      <div className="flex flex-wrap overflow-hidden border-t border-l">
+        {products.length
+          ? products.map((item) => <Product key={item.id} product={item} />)
+          : null}
       </div>
     </>
   );

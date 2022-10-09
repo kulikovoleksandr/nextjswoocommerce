@@ -1,14 +1,12 @@
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import { isEmpty } from "lodash";
 import { Vector } from "../../icons";
 
 const Header = ({ header }) => {
-  console.log(header);
   const { headerMenuItems, favicon, siteLogoUrl, siteDescription, siteTitle } =
     header || {};
-  console.log(headerMenuItems);
-
   return (
     <>
       <Head>
@@ -16,26 +14,26 @@ const Header = ({ header }) => {
         <meta name="description" content={siteDescription || ""} />
         <link rel="icon" href={favicon} />
       </Head>
-      <header className="p-5 bg-cyan-100 flex items-center">
+      <header className="p-5 mb-10 bg-cyan-100 flex items-center">
         <Link href="/">
-          <a>
-            <img src={siteLogoUrl} alt={siteTitle}></img>
+          <a className="block mr-5">
+            <Image src={siteLogoUrl} alt={siteTitle} width={100} height={44} />
           </a>
         </Link>
-        <div>
+        <div className="mr-5">
           <h2>{siteTitle}</h2>
           <h3>{siteDescription}</h3>
           <Vector />
         </div>
-        <div>
+        <nav className="mr-5">
           {!isEmpty(headerMenuItems) && headerMenuItems.length
             ? headerMenuItems.map((menuItem) => (
                 <Link key={menuItem.ID} href={menuItem?.url ?? "/"}>
-                  <a>{menuItem.title}</a>
+                  <a className="mr-5">{menuItem.title}</a>
                 </Link>
               ))
             : null}
-        </div>
+        </nav>
       </header>
     </>
   );

@@ -7,10 +7,12 @@ module.exports = {
       poll: 1000,
       aggregateTimeout: 300,
     };
-
     return config;
   },
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
+  },
+  images: {
+    domains: ["woocommerce.local"],
   },
 };
